@@ -7,7 +7,6 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
-@Table
 public class Image {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,8 +23,9 @@ public class Image {
 
     }
     public Image(String description,String dimensions){
-        this.dimensions=dimensions;
+
         this.description=description;
+        this.dimensions=dimensions;
     }
 
     public void setId(int id) {
