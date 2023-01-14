@@ -42,9 +42,8 @@ public class ImageService {
     }
 
     public Image findById(int id) {
-        if(imageRepository2.findById(id).isPresent())
-            return imageRepository2.findById(id).get();
-        return null;
+        return imageRepository2.findById(id).get();
+
     }
 
     public int countImagesInScreen(Image image, String screenDimensions) {
