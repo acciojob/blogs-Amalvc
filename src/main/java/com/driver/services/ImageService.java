@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
-import java.util.Optional;
+
 
 @Service
 public class ImageService {
@@ -29,13 +29,14 @@ public class ImageService {
         }
         list.add(image);
         blog.setImageList(list);
+        imageRepository2.save(image);
         blogRepository.save(blog);
         return image;
     }
 
     public void deleteImage(Image image){
         if(imageRepository2.findById(image.getId()).isPresent()){
-            imageRepository2.deleteById(image.getId());
+            imageRepository2.delete(image);
         }
 
     }
