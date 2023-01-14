@@ -15,7 +15,7 @@ public class BlogController {
     @Autowired
     BlogService blogService;
 
-    @GetMapping("/get_no_blogs")
+    @GetMapping
     public ResponseEntity<Integer> getAllBlogs() {
         int countOfBlogs = 0;
         List<Blog>list=blogService.showBlogs();
@@ -23,7 +23,7 @@ public class BlogController {
         return new ResponseEntity<>(countOfBlogs, HttpStatus.OK);
     }
 
-    @PostMapping("/create_blog")
+    @PostMapping
     public ResponseEntity createBlog(@RequestParam Integer userId ,
                                            @RequestParam String title,
                                            @RequestParam String content) {
