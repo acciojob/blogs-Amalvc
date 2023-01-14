@@ -23,7 +23,7 @@ public class Image {
     public Image(){
 
     }
-    public Image(String description,String dimension){
+    public Image(String description,String dimensions){
         this.dimensions=dimensions;
         this.description=description;
     }
